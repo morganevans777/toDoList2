@@ -11,11 +11,11 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');        
 
 app.get('/', function(req, res) {
-    res.render('home')
-})
-
-app.get('/list', function(req, res) {
-    res.render('list')
-})
+    database.fetchData(function(data) {
+        console.log(data)
+        res.render('list', {task: data});
+    });
+    
+});
 
 app.listen(3000);

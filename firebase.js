@@ -10,3 +10,13 @@ exports.init = function(){
     firebase.initializeApp(config);
     console.log('firebase initialized')
 };
+
+exports.fetchData = function(callback) {
+    return firebase.database().ref('/task').once('value').then(function(snapshot) {
+        if(snapshot) {
+            callback(snapshot.val())
+        } else {
+            callback('error')
+        }
+    });
+}
