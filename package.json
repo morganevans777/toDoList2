@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.4",
-    "express3-handlebars": "^0.5.2"
+    "express3-handlebars": "^0.5.2",
+    "firebase": "^4.3.1"
   }
 }
