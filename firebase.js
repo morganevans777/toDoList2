@@ -12,7 +12,7 @@ exports.init = function(){
 };
 
 exports.fetchData = function(callback) {
-    return firebase.database().ref('/task').once('value').then(function(snapshot) {
+    return firebase.database().ref('/tasks').once('value').then(function(snapshot) {
         if(snapshot) {
             callback(snapshot.val())
         } else {

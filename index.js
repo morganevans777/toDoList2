@@ -13,7 +13,7 @@ app.set('view engine', 'handlebars');
 app.get('/', function(req, res) {
     database.fetchData(function(data) {
         console.log(data)
-        res.render('list', {task: data});
+        res.render('list', {tasks: data});
     });
     
 });
