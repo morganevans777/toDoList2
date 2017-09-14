@@ -20,9 +20,3 @@ exports.fetchData = function(callback) {
         }
     });
 }
-
-exports.writeData = function() {
-    firebase.database().ref('/task' + 7).set({
-        task: clean
-      });
-}
