@@ -19,7 +19,11 @@ app.get('/', function(req, res) {
 });
 
 app.get('/add', function(req, res) {
-    res.render('add');
+    database.writeData(function(data) {
+        console.log(data)
+        res.render('add');
+    })
+    
 })
 
 app.listen(3000);

@@ -20,3 +20,9 @@ exports.fetchData = function(callback) {
         }
     });
 }
+
+exports.writeData = function(task) {
+    firebase.database().ref('/tasks').set({
+      task: 'Create a function',
+    });
+  }
