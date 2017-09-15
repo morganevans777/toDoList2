@@ -11,6 +11,13 @@ exports.init = function(){
     console.log('firebase initialized')
 };
 
+exports.writeData = function(task) {
+   return firebase.database().ref('/tasks/').set({
+      task1: 'Create a function',
+      task2: 'Take out the trash'
+    });
+}
+
 exports.fetchData = function(callback) {
     return firebase.database().ref('/tasks').once('value').then(function(snapshot) {
         if(snapshot) {
@@ -21,8 +28,3 @@ exports.fetchData = function(callback) {
     });
 }
 
-exports.writeData = function(task) {
-    firebase.database().ref('/tasks').set({
-      task: 'Create a function',
-    });
-  }

@@ -10,20 +10,16 @@ database.init();
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');        
 
+app.get('/add', function(req, res) {
+    res.render('add');
+    database.writeData();
+});
+
 app.get('/', function(req, res) {
     database.fetchData(function(data) {
         console.log(data)
         res.render('list', {tasks: data});
     });
-    
 });
-
-app.get('/add', function(req, res) {
-    database.writeData(function(data) {
-        console.log(data)
-        res.render('add');
-    })
-    
-})
 
 app.listen(3000);
