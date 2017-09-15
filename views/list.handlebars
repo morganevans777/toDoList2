@@ -1,6 +1,15 @@
 <h2>List Page</h2>
 <p>Here are your tasks for today<p>
 
+<form action='/' method='post'>
+    Type in what you need to do:<br></br>
+    <input style='display: none;' name='id' value={{numberOfTasks}}/>
+    <input name='title' type='text'>
+    <br></br>
+    <input type='submit'>
+</form>
+
    {{#each tasks}}
    {{title}},
    {{/each}}
+

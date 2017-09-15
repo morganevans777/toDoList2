@@ -11,10 +11,9 @@ exports.init = function(){
     console.log('firebase initialized')
 };
 
-exports.writeData = function() {
-   return firebase.database().ref('tasks/' + 0).set({
-        title: 'Do the dishes',
-    });
+exports.writeData = function(data) {
+    console.log(data)
+   return firebase.database().ref('tasks/' +data.id + '/').set(data);
 }
 
 exports.fetchData = function(callback) {

@@ -9,6 +9,7 @@
   "author": "Morgan Evans",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.1",
     "express": "^4.15.4",
     "express3-handlebars": "^0.5.2",
     "firebase": "^4.3.1"
