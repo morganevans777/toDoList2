@@ -11,10 +11,9 @@ exports.init = function(){
     console.log('firebase initialized')
 };
 
-exports.writeData = function(task) {
-   return firebase.database().ref('/tasks/').set({
-      task1: 'Create a function',
-      task2: 'Take out the trash'
+exports.writeData = function() {
+   return firebase.database().ref('tasks/' + 0).set({
+        title: 'Do the dishes',
     });
 }
 
