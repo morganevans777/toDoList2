@@ -20,7 +20,7 @@ app.set('view engine', 'handlebars');
 
 app.get('/', function(req, res) {
     database.fetchData(function(data) {
-        console.log(data)
+        console.log(data, 'list')
         res.render('list', {tasks: data,
         numberOfTasks: data.length});
     });
@@ -30,5 +30,11 @@ app.post('/', function(req,res) {
     database.writeData(req.body);
     res.redirect('/')
 });
+
+app.get('/remove/:id', function(req, res) {
+    database.removeData(req.params.id);
+    res.redirect('/')
+})
+
 
 app.listen(3000);

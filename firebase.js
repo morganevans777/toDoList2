@@ -18,11 +18,18 @@ exports.writeData = function(data) {
 
 exports.fetchData = function(callback) {
     return firebase.database().ref('/tasks').once('value').then(function(snapshot) {
+            var allData = [];
         if(snapshot) {
-            callback(snapshot.val())
+            for(var id in snapshot.val()){
+                allData.push({id: id, title: snapshot.val()[id].title});
+            }
+            callback(allData)
         } else {
-            callback('error')
+            callback(allData)
         }
     });
 }
 
+exports.removeData = function(id) {
+    return firebase.database().ref('/tasks/' + id + '/').remove()
+}
