@@ -3,13 +3,13 @@
 
 <form action='/' method='post'>
     Type in what you need to do:<br></br>
-    <input style='display: none;' name='id' value={{numberOfTasks}}/>
     <input name='title' type='text'>
     <br></br>
     <input type='submit'>
 </form>
 
+<ol>
    {{#each tasks}}
-   {{title}},
+   <li>{{title}}</li>
    {{/each}}
-
+</ol>

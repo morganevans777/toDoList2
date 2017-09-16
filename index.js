@@ -27,7 +27,6 @@ app.get('/', function(req, res) {
 }); 
 
 app.post('/', function(req,res) {
-    console.log(req.body);
     database.writeData(req.body);
     res.redirect('/')
 });
