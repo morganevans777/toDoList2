@@ -13,7 +13,7 @@ exports.init = function(){
 
 exports.writeData = function(data) {
     console.log(data)
-   return firebase.database().ref('tasks/' +data.id + '/').set(data);
+   return firebase.database().ref('/tasks/' +data.id + '/').push('/tasks/').set(data);
 }
 
 exports.fetchData = function(callback) {

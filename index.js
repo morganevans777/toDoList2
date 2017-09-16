@@ -20,11 +20,9 @@ app.set('view engine', 'handlebars');
 
 app.get('/', function(req, res) {
     database.fetchData(function(data) {
-        console.log(data, 'get')
-       
-
+        console.log(data)
         res.render('list', {tasks: data,
-        numberOfTasks: data.length + 1});
+        numberOfTasks: data.length});
     });
 }); 
 
